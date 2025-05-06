@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  mcp-server:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./config.json:/app/config.json
+      - ${CODE_PATH:-./sample_code}:/app/code
+      - ${DOCS_PATH:-./sample_docs}:/app/docs
+    command: --code-path /app/code --docs-path /app/docs --port 5000
+    restart: unless-stopped
+    environment:
+      - GITBOOK_SPACE_ID=${GITBOOK_SPACE_ID:-}
+      - GITBOOK_TOKEN=${GITBOOK_TOKEN:-}

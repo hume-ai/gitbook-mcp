@@ -1,0 +1,30 @@
+{
+    "code_path": "/app/code",
+    "docs_path": "/app/docs",
+    "port": 5000,
+    "index_interval": 300,
+    "exclude_patterns": [
+      "__pycache__",
+      "*.pyc",
+      ".*",
+      "venv",
+      "env",
+      "node_modules",
+      "dist",
+      "build"
+    ],
+    "gitbook": {
+      "space_id": "your-gitbook-space-id",
+      "api_token": "your-gitbook-api-token",
+      "sync_modules": true,
+      "sync_classes": true,
+      "sync_functions": true,
+      "webhook_secret": "your-webhook-secret"
+    },
+    "logging": {
+      "level": "INFO",
+      "file": "/app/logs/mcp.log",
+      "max_size": 10485760,
+      "backup_count": 5
+    }
+  }
